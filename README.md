@@ -4,7 +4,6 @@
 
 ```bash
 rails new app --skip-javascript --skip-asset-pipeline
-npm install --save-dev axios svelte @inertiajs/inertia @inertiajs/inertia-svelte @inertiajs/progress @sveltejs/vite-plugin-svelte
 ```
 
 ### 2. Add to your Gemfile:
@@ -14,11 +13,12 @@ gem 'inertia_rails'
 gem 'vite_rails'
 ```
 
-### 3. Run vite installer
+### 3. Install packages and vite
 
 ```bash
 bundle
 bundle exec vite install
+npm install --save-dev axios svelte @inertiajs/inertia @inertiajs/inertia-svelte @inertiajs/progress @sveltejs/vite-plugin-svelte
 ```
 
 ### 4. Replace `app/frontend/entrypoints/application.js` with
