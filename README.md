@@ -1,4 +1,6 @@
-# Rails 7, Vite, Inertia, Svelte
+# Rails 7 starter template
+
+With Vite, Inertia, and Svelte
 
 ### 1. Generate Rails app
 
