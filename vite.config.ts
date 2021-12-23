@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import ruby from 'vite-plugin-ruby'
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import assetsPreprocessor from 'svelte-assets-preprocessor'
 
 export default ({mode}) => {
   const prod = mode == 'production'
@@ -15,8 +14,7 @@ export default ({mode}) => {
         experimental: {
           prebundleSvelteLibraries: true
         },
-        emitCss: prod,
-        preprocess: assetsPreprocessor({ /* options */ })
+        emitCss: prod
       })
     ],
   })
