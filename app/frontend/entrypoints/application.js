@@ -3,6 +3,8 @@ import axios from 'axios'
 import { createInertiaApp } from '@inertiajs/inertia-svelte'
 import { InertiaProgress } from '@inertiajs/progress'
 
+const pages = import.meta.glob('../pages/**/*.svelte')
+
 document.addEventListener('DOMContentLoaded', () => {
   const csrfToken = document.querySelector('meta[name=csrf-token]').content
   axios.defaults.headers.common['X-CSRF-Token'] = csrfToken
@@ -11,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   createInertiaApp({
     id: 'app',
-    resolve: name => import(`../pages/${name}.svelte`),
+    resolve: name => pages[`../pages/${name}.svelte`](),
     setup({ el, App, props }) {
       new App({ target: el, props })
     },
