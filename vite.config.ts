@@ -12,6 +12,9 @@ export default ({mode}) => {
     plugins: [
       ruby(),
       svelte({
+        experimental: {
+          prebundleSvelteLibraries: true
+        },
         emitCss: prod,
         preprocess: assetsPreprocessor({ /* options */ })
       })
